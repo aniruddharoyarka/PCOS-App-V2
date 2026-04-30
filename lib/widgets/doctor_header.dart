@@ -9,7 +9,7 @@ class DoctorHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("HealthCare Partners",
+        Text("HealthCare Partnerss",
           style:GoogleFonts.poppins(
             fontSize: 27,
             fontWeight: FontWeight.bold,
