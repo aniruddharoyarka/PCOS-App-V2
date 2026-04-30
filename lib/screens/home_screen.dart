@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  HomeScreenHeader(name: "Arie")
+                  HomeScreenHeader(name: "Aria")
                 ],
               ),
             )
