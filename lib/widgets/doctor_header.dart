@@ -9,8 +9,8 @@ class DoctorHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("HealthCare Partners",
-          style:GoogleFonts.poppins(
+        Text("HealthCare Partnerss",
+          style:TextStyle(
             fontSize: 27,
             fontWeight: FontWeight.bold,
             color: Color(0xFF1E1B4B),
@@ -21,7 +21,7 @@ class DoctorHeader extends StatelessWidget {
         ),
         SizedBox(height: 3,),
         Text("Trusted specialists for PCOS support",
-              style: GoogleFonts.poppins(
+              style:TextStyle (
                 fontWeight: FontWeight.w300,
                 fontSize:13,
                 color: Colors.grey[600]
