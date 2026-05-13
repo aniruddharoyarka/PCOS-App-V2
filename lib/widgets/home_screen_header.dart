@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreenHeader extends StatelessWidget {
   final String name;
@@ -21,10 +22,11 @@ class HomeScreenHeader extends StatelessWidget {
             children: [
               Text(
                 "Good evening,",
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                   fontSize: 16,
                   color: Colors.grey[600],
                   fontWeight: FontWeight.w500,
+                  height: 1
                 ),
               ),
               //SizedBox(height: 3),
@@ -32,7 +34,7 @@ class HomeScreenHeader extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: const TextStyle(
+                    style: GoogleFonts.poppins(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF2D1F52),
@@ -59,7 +61,7 @@ class HomeScreenHeader extends StatelessWidget {
             ),
             child: Stack(
               children: [
-                const Icon(
+                Icon(
                   Icons.notifications_none_rounded,
                   color: Color(0xFF2D1F52),
                   size: 28,
