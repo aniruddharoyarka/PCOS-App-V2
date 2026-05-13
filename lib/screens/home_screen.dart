@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pcos_app_v2/widgets/home_cycle_status_card.dart';
 import 'package:pcos_app_v2/widgets/home_screen_header.dart';
+import 'package:pcos_app_v2/widgets/log_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
