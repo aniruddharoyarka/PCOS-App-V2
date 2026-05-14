@@ -6,159 +6,121 @@ class HomeCycleStatusCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const Color cardBackground = Color(0xFFF3EDF9); // Soft pastel purple
+    const Color accentColor = Color(0xFF6D3CCB); // Deep purple for contrast
+    const Color textColor = Color(0xFF1A1A24); // Dark charcoal for readability
+
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
+        color: cardBackground,
         borderRadius: BorderRadius.circular(28),
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFF6D3CCB),
-            Color(0xFFB56CFF),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.local_fire_department_outlined,
-                    color: Colors.white,
-                    size: 18,
-                  ),
-                  SizedBox(width: 8),
-                  Text(
-                    "CYCLE STATUS",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 4,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(
-                  "Active",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-            ],
-          ),
-
-          SizedBox(height: 8),
-
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Day 18",
-                    style: GoogleFonts.poppins(
-                      color: Colors.white,
-                      fontSize: 36,
-                      fontWeight: FontWeight.w700,
-                      height: 1,
-                    ),
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    "of your cycle",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(width: 15),
-
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      "Next period in ~7 days",
-                      style: TextStyle(
+                    Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: const BoxDecoration(
                         color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        Icons.water_drop_outlined,
+                        color: accentColor,
+                        size: 14,
                       ),
                     ),
-
-                    //SizedBox(height: 5),
-                    Text(
-                      "Luteal phase · Monitor mood & cravings",
+                    const SizedBox(width: 8),
+                    const Text(
+                      "Cycle status",
                       style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 15,
+                        color: textColor,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],
                 ),
-              ),
-            ],
-          ),
 
-          SizedBox(height: 15),
+                const SizedBox(height: 10),
 
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: LinearProgressIndicator(
-              value: 18 / 28,
-              minHeight: 6,
-              backgroundColor: Colors.white24,
-              valueColor: const AlwaysStoppedAnimation<Color>(
-                Colors.white,
-              ),
+                Text(
+                  "Your Cycle\nProgress",
+                  style: GoogleFonts.poppins(
+                    color: textColor,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                    height: 1.2,
+                  ),
+                ),
+
+                const SizedBox(height: 8),
+
+                Text(
+                  "Next period in ~7 days",
+                  style: TextStyle(
+                    color: textColor.withOpacity(0.6),
+                    fontSize: 13,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
             ),
           ),
 
-          SizedBox(height: 10),
-
-          /// Bottom Labels
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                "Day 1",
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 15,
+          SizedBox(
+            width: 90,
+            height: 90,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                CircularProgressIndicator(
+                  value: 1.0,
+                  strokeWidth: 10,
+                  color: Colors.white.withOpacity(0.6),
                 ),
-              ),
-              Text(
-                "Day 28",
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 15,
+                const CircularProgressIndicator(
+                  value: 18 / 28,
+                  strokeWidth: 10,
+                  strokeCap: StrokeCap.round,
+                  color: accentColor,
                 ),
-              ),
-            ],
+                Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "18",
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          height: 1.1,
+                        ),
+                      ),
+                      Text(
+                        "days",
+                        style: TextStyle(
+                          color: textColor.withOpacity(0.6),
+                          fontSize: 11,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

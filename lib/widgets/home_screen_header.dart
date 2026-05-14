@@ -12,7 +12,7 @@ class HomeScreenHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,50 +23,39 @@ class HomeScreenHeader extends StatelessWidget {
               Text(
                 "Good evening,",
                 style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  color: Colors.grey[600],
+                  fontSize: 13, // Smaller, sleeker greeting
+                  color: Colors.grey[500],
                   fontWeight: FontWeight.w500,
-                  height: 1
+                  height: 1.2,
                 ),
               ),
-              //SizedBox(height: 3),
-              Row(
-                children: [
-                  Text(
-                    name,
-                    style: GoogleFonts.poppins(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2D1F52),
-                    ),
-                  ),
-                ],
+              const SizedBox(height: 2),
+              Text(
+                name,
+                style: GoogleFonts.poppins(
+                  fontSize: 22, // Tighter, bold name
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0xFF1A1A24), // Deeper, softer dark tone
+                ),
               ),
             ],
           ),
 
-          // notif
+          // Notification Button
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(8), // Reduced padding
             decoration: BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 10,
-                  spreadRadius: 2,
-                ),
-              ],
+              border: Border.all(
+                color: Colors.grey.withOpacity(0.2), // Subtle border instead of heavy shadow
+                width: 1,
+              ),
             ),
-            child: Stack(
-              children: [
-                Icon(
-                  Icons.notifications_none_rounded,
-                  color: Color(0xFF2D1F52),
-                  size: 28,
-                ),
-              ],
+            child: const Icon(
+              Icons.notifications_none_rounded,
+              color: Color(0xFF1A1A24),
+              size: 22, // Smaller icon
             ),
           ),
         ],

@@ -13,21 +13,24 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Scaffold(
-        body: SafeArea(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(height: 10),
-                  HomeScreenHeader(name: "Aria"),
-                  SizedBox(height: 10),
-                  HomeCycleStatusCard(),
-                ],
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              HomeScreenHeader(name: "Aria"),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: HomeCycleStatusCard(),
               ),
-            )
-        )
+              //LogCard(),
+
+            ],
+          ),
+        ),
       ),
     );
   }
