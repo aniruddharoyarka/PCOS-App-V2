@@ -4,6 +4,7 @@ import 'package:pcos_app_v2/widgets/doctor_pdf_file.dart';
 import 'package:pcos_app_v2/widgets/doctor_header.dart';
 import 'package:pcos_app_v2/widgets/report_preview.dart';
 import 'package:pcos_app_v2/widgets/Recommended_Doctor.dart';
+import 'package:pcos_app_v2/widgets/view_profile.dart';
 class DoctorsScreen extends StatefulWidget {
   const DoctorsScreen({super.key});
 
@@ -54,6 +55,29 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
     ),
   ];
 
+
+
+
+
+
+
+
+  final List<DoctorModel> doctors = [
+    DoctorModel(
+      name: "Dr Sarah",
+      speciality: "Gynecologist",
+      rating: 49,
+      review: 100,
+      experience: 10,
+      location: "Dhaka",
+      fee: 50,
+      about: "About text",
+
+     // tag: ["PCOS"],
+      availabletime: "Today",
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,6 +100,7 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
               SizedBox(height: 28),
               RecommendedDoctor( doctor: doctor,),
               const SizedBox(height: 100),
+              ViewProfile(doctors:doctors),
 
 
             ],

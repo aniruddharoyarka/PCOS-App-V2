@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-
+import 'package:pcos_app_v2/widgets/view_profile.dart';
+import 'package:pcos_app_v2/widgets/tag_chip.dart';
 class Doctor {
   final String name;
   final String speciality;
@@ -123,25 +123,13 @@ class RecommendedDoctor extends StatelessWidget {
 
 
             const SizedBox(height: 10),
-
             Wrap(
               spacing: 7,
               children: doctor.tags
-                  .map((tag) => Chip(label: Text(tag,
-                style: TextStyle(
-                  color: Color(0xFF6B4BA3)
-                ),
-              
-              
-              ),
-                backgroundColor: const Color(0xFFF5EDFF),
-                side: const BorderSide(
-                  color: Color(0xFFF5EDFF),
-                  width: 1,
-                ),
-              ))
+                  .map((tag) => TagChip(text: tag))
                   .toList(),
             ),
+
 
             const SizedBox(height: 10),
 
@@ -162,23 +150,43 @@ class RecommendedDoctor extends StatelessWidget {
                     ),),
                 ),
                 TextButton(
-                  onPressed: () {},
-                  child:Row(
-                  children: [const Text("View profile",
-                  style: TextStyle(
-                    color: Color(0xFF6B4BA3)
-                  ),),
-                    const SizedBox(width: 4),
-
-                    const Icon(
-                        Icons.arrow_forward_ios,
-                        size: 14,
-                        color: Color(0xFF6B4BA3),
-                    )
-                  ]
-                  )
-
-
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      backgroundColor: Colors.transparent,
+                      builder: (context) {
+                        return DraggableScrollableSheet(
+                          initialChildSize: 0.8,
+                          minChildSize: 0.5,
+                          maxChildSize: 0.98,
+                          builder: (context, scrollController) {
+                            return Container(
+                              decoration: const BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(20),
+                                ),
+                              ),
+                              child: ViewProfile(
+                                doctors: [],
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    );
+                  },
+                  child: Row(
+                    children: const [
+                      Text(
+                        "View profile",
+                        style: TextStyle(color: Color(0xFF6B4BA3)),
+                      ),
+                      SizedBox(width: 4),
+                      Icon(Icons.arrow_forward_ios, size: 14),
+                    ],
+                  ),
                 )
 
               ],
