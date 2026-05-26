@@ -15,6 +15,8 @@ class DoctorModel {
   final int fee;
   final String about;
   final String availabletime;
+  final String image;
+  final List<String> tags;
 
 
 
@@ -30,6 +32,9 @@ class DoctorModel {
     required this.location,
     required this.fee,
     required this.about,
+    required this.image,
+    required this.tags,
+
 
 
     required this.availabletime,
@@ -44,6 +49,45 @@ class ViewProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      padding: EdgeInsets.only(left:20 ,right: 20,top: 16),
+      color: const Color(0xFFFAF6FF),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+
+                Container(
+                  width: 70,
+                  height: 5,
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+
+
+              ],
+            ),
+          SizedBox(height: 30,),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+            CircleAvatar(
+            radius: 34,
+            //backgroundImage: NetworkImage(doctors[index].image),
+            )
+]
+    )
+
+
+        ],
+      ),
+
+    );
   }
 }

@@ -72,8 +72,9 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
       location: "Dhaka",
       fee: 50,
       about: "About text",
+      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
 
-     // tag: ["PCOS"],
+      tags: ["PCOS"],
       availabletime: "Today",
     ),
   ];
