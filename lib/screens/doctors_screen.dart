@@ -62,22 +62,7 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
 
 
 
-  final List<DoctorModel> doctors = [
-    DoctorModel(
-      name: "Dr Sarah",
-      speciality: "Gynecologist",
-      rating: 49,
-      review: 100,
-      experience: 10,
-      location: "Dhaka",
-      fee: 50,
-      about: "About text",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
 
-      tags: ["PCOS"],
-      availabletime: "Today",
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +86,7 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
               SizedBox(height: 28),
               RecommendedDoctor( doctor: doctor,),
               const SizedBox(height: 100),
-              ViewProfile(doctors:doctors),
+
 
 
             ],
