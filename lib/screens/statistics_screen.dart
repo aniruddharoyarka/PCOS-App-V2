@@ -25,6 +25,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 15),
                 StatsHeader(),
                 SizedBox(height: 10),
                 StatsRangeChips(selectedIndex: 0),
