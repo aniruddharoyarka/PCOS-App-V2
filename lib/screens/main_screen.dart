@@ -25,27 +25,25 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Positioned.fill(
-              child: IndexedStack(
-                index: _selectedIndex,
-                children: _pages,
-              ),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: IndexedStack(
+              index: _selectedIndex,
+              children: _pages,
             ),
-
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: FloatingNavBar(
-                selectedIndex: _selectedIndex,
-                onItemSelected: (index) {
-                  setState(() => _selectedIndex = index);
-                },
-              ),
+          ),
+      
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: FloatingNavBar(
+              selectedIndex: _selectedIndex,
+              onItemSelected: (index) {
+                setState(() => _selectedIndex = index);
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -1,119 +1,157 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'constants.dart';
+
 class HomeCycleStatusCard extends StatelessWidget {
   const HomeCycleStatusCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const Color cardBackground = Color(0xFFF3EDF9); // Soft pastel purple
-    const Color accentColor = Color(0xFF6D3CCB); // Deep purple for contrast
-    const Color textColor = Color(0xFF1A1A24); // Dark charcoal for readability
-
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         color: cardBackground,
-        borderRadius: BorderRadius.circular(28),
+
+        borderRadius: BorderRadius.circular(30),
+
+        border: Border.all(
+          color: const Color(0xFFE9DDF8),
+        ),
+
+        boxShadow: [
+          BoxShadow(
+            color: accentColor.withOpacity(0.06),
+            blurRadius: 22,
+            offset: const Offset(0, 10),
+          ),
+        ],
       ),
+
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+
                     Container(
                       padding: const EdgeInsets.all(6),
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
+                      decoration: BoxDecoration(
+                        color: accentColor,
                         shape: BoxShape.circle,
                       ),
+
                       child: const Icon(
-                        Icons.water_drop_outlined,
-                        color: accentColor,
+                        Icons.water_drop_rounded,
+                        color: Colors.white,
                         size: 14,
                       ),
                     ),
+
                     const SizedBox(width: 8),
                     const Text(
-                      "Cycle status",
+                      "Cycle Status",
                       style: TextStyle(
                         color: textColor,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
                 ),
 
-                const SizedBox(height: 10),
+                const SizedBox(height: 14),
 
                 Text(
                   "Your Cycle\nProgress",
                   style: GoogleFonts.poppins(
                     color: textColor,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
-                    height: 1.2,
+                    fontSize: 21,
+                    fontWeight: FontWeight.w700,
+                    height: 1.15,
                   ),
                 ),
 
-                const SizedBox(height: 8),
+                const SizedBox(height: 10),
 
                 Text(
                   "Next period in ~7 days",
                   style: TextStyle(
-                    color: textColor.withOpacity(0.6),
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
+                    color: textColor.withOpacity(0.58),
+                    fontSize: 12.5,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ],
             ),
           ),
 
+          const SizedBox(width: 10),
+
           SizedBox(
-            width: 90,
-            height: 90,
+            width: 92,
+            height: 92,
             child: Stack(
-              fit: StackFit.expand,
+              alignment: Alignment.center,
               children: [
-                CircularProgressIndicator(
-                  value: 1.0,
-                  strokeWidth: 10,
-                  color: Colors.white.withOpacity(0.6),
+
+                SizedBox(
+                  width: 92,
+                  height: 92,
+                  child: CircularProgressIndicator(
+                    value: 1,
+                    strokeWidth: 9,
+                    color: Colors.white.withOpacity(0.9),
+                  ),
                 ),
-                const CircularProgressIndicator(
-                  value: 18 / 28,
-                  strokeWidth: 10,
-                  strokeCap: StrokeCap.round,
-                  color: accentColor,
+
+                const SizedBox(
+                  width: 92,
+                  height: 92,
+                  child: CircularProgressIndicator(
+                    value: 18 / 28,
+                    strokeWidth: 9,
+                    strokeCap: StrokeCap.round,
+                    color: accentColor,
+                  ),
                 ),
-                Center(
+
+                Container(
+                  width: 68,
+                  height: 68,
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.95),
+                    shape: BoxShape.circle,
+                  ),
+
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+
                       Text(
                         "18",
                         style: GoogleFonts.poppins(
                           color: textColor,
                           fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          height: 1.1,
+                          fontWeight: FontWeight.w700,
+                          height: 1,
                         ),
                       ),
+
                       Text(
                         "days",
                         style: TextStyle(
-                          color: textColor.withOpacity(0.6),
-                          fontSize: 11,
-                          fontWeight: FontWeight.w500,
+                          color: textColor.withOpacity(0.5),
+                          fontSize: 10,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ],
