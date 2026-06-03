@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pcos_app_v2/widgets/BookingPage.dart';
 
-// ── your existing TagChip import goes here ──
-// import 'tag_chip.dart';
-
-// ─────────────────────────────────────────────
-//  DATA MODEL
-// ─────────────────────────────────────────────
 class DoctorModel {
   final String name;
   final String specialty;
@@ -51,9 +46,6 @@ class DoctorModel {
   }
 }
 
-// ─────────────────────────────────────────────
-//  SAMPLE DATA  (delete when DB is connected)
-// ─────────────────────────────────────────────
 final List<DoctorModel> sampleDoctors = [
   DoctorModel(
     name: 'Dr. Sarah Mitchell',
@@ -394,6 +386,17 @@ class ViewProfile extends StatelessWidget {
         Expanded(
           child: ElevatedButton.icon(
             onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BookAppointment(
+                   // id: doctor.id,
+                    doctorName: doctor.name,
+
+                  ),
+                ),
+              );
+
 
             },
             icon: const Icon(Icons.phone_outlined, size: 16),
