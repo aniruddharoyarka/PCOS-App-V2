@@ -9,7 +9,7 @@ class DoctorHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("HealthCare Partnerss",
+        Text("HealthCare Partners",
           style:TextStyle(
             fontSize: 27,
             fontWeight: FontWeight.bold,
