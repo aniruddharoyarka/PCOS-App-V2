@@ -3,6 +3,7 @@ import 'package:pcos_app_v2/screens/profile_screen.dart';
 import 'package:pcos_app_v2/screens/statistics_screen.dart';
 import 'package:pcos_app_v2/widgets/floating_nav_bar.dart';
 import 'doctors_screen.dart';
+import 'health_screen.dart';
 import 'home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -18,7 +19,8 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _pages = [
     HomeScreen(),
     StatisticsScreen(),
-    DoctorsScreen(),
+    //DoctorsScreen(),
+    HealthScreen(),
     ProfileScreen(),
   ];
 

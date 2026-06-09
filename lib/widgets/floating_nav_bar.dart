@@ -57,7 +57,8 @@ class FloatingNavBar extends StatelessWidget {
                 children: [
                   _item(Icons.home_outlined, Icons.home_rounded, "Home", 0),
                   _item(Icons.bar_chart_rounded, Icons.bar_chart_rounded, "Stats", 1),
-                  _item(Icons.medical_services_outlined, Icons.medical_services_rounded, "Doctors", 2),
+                  _item(Icons.favorite_border, Icons.favorite, "Health", 2),
+                  //_item(Icons.medical_services_outlined, Icons.medical_services_rounded, "Doctors", 2),
                   _item(Icons.person_outline, Icons.person_rounded, "Profile", 3),
                 ],
               ),
