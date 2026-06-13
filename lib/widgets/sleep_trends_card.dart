@@ -16,6 +16,7 @@ class SleepTrendsCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
 
+
         borderRadius: BorderRadius.circular(26),
 
         border: Border.all(
