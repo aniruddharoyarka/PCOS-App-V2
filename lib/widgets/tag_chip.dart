@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class TagChip extends StatelessWidget {
   final String text;
 
+
   const TagChip({
     super.key,
     required this.text,

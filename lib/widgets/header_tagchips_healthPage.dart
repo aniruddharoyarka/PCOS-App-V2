@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pcos_app_v2/widgets/tag_chip.dart';
+import 'package:pcos_app_v2/widgets/health_tagChip.dart';
 
 class healthchip extends StatelessWidget {
   const healthchip({super.key});
@@ -28,10 +28,10 @@ class healthchip extends StatelessWidget {
           spacing: 8,
           runSpacing: 4,
           children: [
-            TagChip(text: "Exercise"),
-            TagChip(text: "Skin Care"),
-            TagChip(text: "Hair Care"),
-            TagChip(text: "Doctor",)
+            HealthTagchip(text: "Exercise",icon:Icons.fitness_center),
+            HealthTagchip(text: "Skin Care",icon: Icons.face_retouching_natural,),
+            HealthTagchip(text: "Hair Care",icon: Icons.dry,),
+            HealthTagchip(text: "Doctor",icon:Icons.local_hospital,)
           ],
         )
 
