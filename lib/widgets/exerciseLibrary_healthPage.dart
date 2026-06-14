@@ -109,7 +109,6 @@ class _ExerciseLibraryState extends State<ExerciseLibrary> {
 
           const SizedBox(height: 15),
 
-          // 👇 Exercise List
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -120,7 +119,7 @@ class _ExerciseLibraryState extends State<ExerciseLibrary> {
               return ExerciseCard(
                 exercise: exercise,
                 onTap: () {
-                  // open modal or details
+
                   showModalBottomSheet(
                     context: context,
                     builder: (_) => Container(
