@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pcos_app_v2/widgets/header_tagchips_healthPage.dart';
+import 'package:pcos_app_v2/widgets/personalizedplan_healthpage.dart';
 
 class HealthScreen extends StatefulWidget {
   const HealthScreen({super.key});
@@ -16,6 +17,8 @@ class _HealthScreenState extends State<HealthScreen> {
       child: Column(
         children: [
           healthchip(),
+          SizedBox(height: 20),
+          PersonalizedplanHealthpage(),
         ],
       ),
 
