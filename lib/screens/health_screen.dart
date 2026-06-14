@@ -13,19 +13,21 @@ class HealthScreen extends StatefulWidget {
 class _HealthScreenState extends State<HealthScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.fromLTRB(12, 45, 12, 10),
-      child: Column(
-        children: [
-          healthchip(),
-          SizedBox(height: 20),
-          PersonalizedplanHealthpage(),
-          SizedBox(height: 20,),
-          exerciseLibrary(),
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(12, 45, 12, 10),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            healthchip(),
+            SizedBox(height: 20),
+            PersonalizedplanHealthpage(),
+            SizedBox(height: 20),
+            ExerciseLibrary(),
+            SizedBox(height: 60),
+          ],
+        ),
       ),
-
-
     );
   }
 }
