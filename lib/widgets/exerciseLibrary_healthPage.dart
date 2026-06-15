@@ -40,6 +40,79 @@ class _ExerciseLibraryState extends State<ExerciseLibrary> {
       calories: "80 cal",
       icon: Icons.self_improvement,
     ),
+
+    ExerciseModel(
+      title: "Yin Yoga",
+      category: "Yoga",
+      level: "Beginner",
+      duration: "30 min",
+      calories: "60 cal",
+      icon: Icons.self_improvement,
+    ),
+    ExerciseModel(
+      title: "Vinyasa Flow",
+      category: "Yoga",
+      level: "Intermediate",
+      duration: "45 min",
+      calories: "150 cal",
+      icon: Icons.self_improvement,
+    ),
+    ExerciseModel(
+      title: "Core Pilates",
+      category: "Pilates",
+      level: "Beginner",
+      duration: "20 min",
+      calories: "90 cal",
+      icon: Icons.sports_gymnastics,
+    ),
+    ExerciseModel(
+      title: "Resistance Band",
+      category: "Strength Training",
+      level: "Beginner",
+      duration: "30 min",
+      calories: "130 cal",
+      icon: Icons.fitness_center,
+    ),
+    ExerciseModel(
+      title: "Full Body Strength",
+      category: "Strength Training",
+      level: "Intermediate",
+      duration: "40 min",
+      calories: "200 cal",
+      icon: Icons.fitness_center,
+    ),
+    ExerciseModel(
+      title: "Morning Stretch",
+      category: "Stretching",
+      level: "Beginner",
+      duration: "10 min",
+      calories: "40 cal",
+      icon: Icons.accessibility_new,
+    ),
+    ExerciseModel(
+      title: "Hip & Lower Back Stretch",
+      category: "Stretching",
+      level: "Beginner",
+      duration: "15 min",
+      calories: "50 cal",
+      icon: Icons.accessibility_new,
+    ),
+    ExerciseModel(
+      title: "Zumba",
+      category: "Dance Fitness",
+      level: "Beginner",
+      duration: "30 min",
+      calories: "200 cal",
+      icon: Icons.music_note,
+    ),
+    ExerciseModel(
+      title: "Dance Cardio",
+      category: "Dance Fitness",
+      level: "Intermediate",
+      duration: "40 min",
+      calories: "220 cal",
+      icon: Icons.music_note,
+    ),
   ];
 
   List<ExerciseModel> get filteredExercises {
@@ -104,6 +177,7 @@ class _ExerciseLibraryState extends State<ExerciseLibrary> {
                 isSelected: selectedCategory == "Strength Training",
                 onTap: () => changeCategory("Strength Training"),
               ),
+
             ],
           ),
 
