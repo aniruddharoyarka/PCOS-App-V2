@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pcos_app_v2/widgets/tagChip_exerciseLibrary_healthPage.dart';
 import 'package:pcos_app_v2/widgets/exercise_modal.dart';
-import 'package:pcos_app_v2/widgets/exercise_card.dart'; // assuming this exists
+import 'package:pcos_app_v2/widgets/exercise_card.dart';
 
 class ExerciseLibrary extends StatefulWidget {
   const ExerciseLibrary({super.key});
