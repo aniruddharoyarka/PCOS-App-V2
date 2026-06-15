@@ -19,7 +19,7 @@ class _HealthScreenState extends State<HealthScreen> {
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            healthchip(),
+            Healthchip(),
             SizedBox(height: 20),
             PersonalizedplanHealthpage(),
             SizedBox(height: 20),

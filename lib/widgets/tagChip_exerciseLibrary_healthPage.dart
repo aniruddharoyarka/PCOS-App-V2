@@ -32,7 +32,7 @@ class TagchipExerciselibraryHealthpage extends StatelessWidget {
         showCheckmark: false,
         side: BorderSide(
           color: isSelected ? Colors.deepPurple : const Color(0xFFF5EDFF),
-          width: 1,
+          width: 2,
         ),
       ),
     );
