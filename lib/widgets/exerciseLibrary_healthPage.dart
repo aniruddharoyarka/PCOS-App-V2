@@ -229,7 +229,7 @@ class _ExerciseLibraryState extends State<ExerciseLibrary> {
               return ExerciseCard(
                 exercise: exercise,
                 onTap: () {
-                  showExerciseDetailSheet(context, exercise);
+                  //exerciseDetailsSheet(context, exercise);
                 },
               );
             },
