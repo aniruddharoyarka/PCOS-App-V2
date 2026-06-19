@@ -24,7 +24,7 @@ class _ExerciseLibraryState extends State<ExerciseLibrary> {
       duration: "20 min",
       calories: "100 cal",
       icon: Icons.directions_walk,
-      youtubeId: "ZXt3GTLQU3g",
+      youtubeId: "RmfKqOz6V5Q",
       about: "A simple, low-impact walk done at a faster-than-normal pace to raise your heart rate and improve circulation.",
       benefits: ["Improves heart health", "Boosts mood", "Easy on the joints"],
     ),
@@ -229,7 +229,7 @@ class _ExerciseLibraryState extends State<ExerciseLibrary> {
               return ExerciseCard(
                 exercise: exercise,
                 onTap: () {
-                  //exerciseDetailsSheet(context, exercise);
+                  showExerciseDetailSheet(context, exercise);
                 },
               );
             },

@@ -67,6 +67,27 @@ class _exerciseDetailsSheetState extends State<exerciseDetailsSheet> {
             controller: scrollController,
               padding: const EdgeInsets.fromLTRB(20, 14, 20, 30),
             children: [
+              buildDragHandleandClose(),
+              const SizedBox(height: 14),
+              buildTitleRow(),
+              const SizedBox(height: 4),
+              Text(
+                widget.exercise.category,
+                style: GoogleFonts.poppins(color: Colors.grey.shade600),
+              ),
+              const SizedBox(height: 20),
+              buildStateRow(),
+              const SizedBox(height: 16),
+              buildAboutSection(),
+              const SizedBox(height: 16),
+              _buildBenefitsSection(),
+              const SizedBox(height: 24),
+              if (isPlaying) buildVideoPlayer() else _buildWatchTutorialButton(),
+
+
+
+
+
 
             ],
 
@@ -249,6 +270,102 @@ class _exerciseDetailsSheetState extends State<exerciseDetailsSheet> {
 
 
    }
+
+
+
+
+
+   Widget _buildBenefitsSection() {
+     return Container(
+       width: double.infinity,
+       padding: const EdgeInsets.all(16),
+       decoration: BoxDecoration(
+         color: Colors.white,
+         borderRadius: BorderRadius.circular(18),
+         border: Border.all(color: const Color(0xffE9DDF9)),
+       ),
+       child: Column(
+         crossAxisAlignment: CrossAxisAlignment.start,
+         children: [
+           Text(
+             "KEY BENEFITS",
+             style: GoogleFonts.poppins(
+               fontSize: 12,
+               fontWeight: FontWeight.w700,
+               color: Colors.deepPurple,
+               letterSpacing: .5,
+             ),
+           ),
+           const SizedBox(height: 10),
+           ...widget.exercise.benefits.map((benefit) => Padding(
+             padding: const EdgeInsets.only(bottom: 8),
+             child: Row(
+               children: [
+                 const Icon(Icons.star_border, size: 18, color: Colors.deepPurple),
+                 const SizedBox(width: 8),
+                 Text(
+                   benefit,
+                   style: GoogleFonts.poppins(
+                     fontSize: 15,
+                     color: const Color(0xff27247D),
+                   ),
+                 ),
+               ],
+             ),
+           )),
+         ],
+       ),
+     );
+   }
+
+   Widget _buildWatchTutorialButton() {
+     return SizedBox(
+       width: double.infinity,
+       child: ElevatedButton(
+         onPressed: startVideo,
+         style: ElevatedButton.styleFrom(
+           elevation: 0,
+           backgroundColor: const Color(0xffE6312E),
+           foregroundColor: Colors.white,
+           shape: RoundedRectangleBorder(
+             borderRadius: BorderRadius.circular(16),
+           ),
+         ),
+         child: Padding(
+           padding: const EdgeInsets.symmetric(vertical: 16),
+           child: Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+               const Icon(Icons.smart_display_rounded, size: 22),
+               const SizedBox(width: 10),
+               Text(
+                 "Watch Tutorial on YouTube",
+                 style: GoogleFonts.poppins(
+                   fontSize: 16,
+                   fontWeight: FontWeight.w600,
+                 ),
+               ),
+             ],
+           ),
+         ),
+       ),
+     );
+   }
+
+   Widget buildVideoPlayer() {
+     return ClipRRect(
+       borderRadius: BorderRadius.circular(18),
+       child: YoutubePlayer(
+         controller: playerController!,
+         showVideoProgressIndicator: true,
+         progressIndicatorColor: Colors.deepPurple,
+       ),
+     );
+   }
+
+
+
+
 
  }
 
