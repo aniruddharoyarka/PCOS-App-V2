@@ -248,7 +248,9 @@ class _exerciseDetailsSheetState extends State<exerciseDetailsSheet> {
          );
 
 
-   }}
+   }
+
+ }
 
 
 
