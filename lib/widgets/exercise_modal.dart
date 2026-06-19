@@ -7,6 +7,9 @@ class ExerciseModel {
   final String duration;
   final String calories;
   final IconData icon;
+  final String about;
+  final String youtubeId;
+  final List <String>benefits;
 
   const ExerciseModel({
     required this.title,
@@ -15,5 +18,8 @@ class ExerciseModel {
     required this.duration,
     required this.calories,
     required this.icon,
+    required this.youtubeId,
+    required this.about,
+    required this.benefits,
   });
 }
