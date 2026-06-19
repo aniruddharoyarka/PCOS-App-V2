@@ -37,11 +37,236 @@ class _exerciseDetailsSheetState extends State<exerciseDetailsSheet> {
        )
 
      );
+     setState((){
+       isPlaying=true;
+
+     });
    }
-  @override
-  Widget build(BuildContext context) {
 
 
-    return const Placeholder();
-  }
-}
+   @override
+   void dispose() {
+     playerController?.dispose();
+     super.dispose();
+   }
+
+   Widget build(BuildContext context) {
+
+
+    return DraggableScrollableSheet(
+      initialChildSize: .85,
+      minChildSize: .5,
+      maxChildSize: .95,
+        builder: (context,scrollController){
+        return Container(
+          decoration: const BoxDecoration(
+            color: Color(0xffFAF7FE),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+          ),
+          child: ListView(
+            controller: scrollController,
+              padding: const EdgeInsets.fromLTRB(20, 14, 20, 30),
+            children: [
+
+            ],
+
+          ),
+
+
+        );
+        }
+
+
+    );
+
+
+
+    }
+    Widget buildDragHandleandClose() {
+      return Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            width: 40,
+            height: 5,
+            decoration: BoxDecoration(
+              color: const Color(0xffE3D6F5),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
+                  color: Color(0xffEEE4F8),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                    Icons.close, size: 18, color: Colors.deepPurple),
+              ),
+            ),
+
+          )
+        ],
+      );
+    }
+     Widget buildTitleRow() {
+       return Row(
+         crossAxisAlignment: CrossAxisAlignment.start,
+         children: [
+           Expanded(
+             child: Text(
+               widget.exercise.title,
+               style: GoogleFonts.poppins(
+                 fontSize: 24,
+                 fontWeight: FontWeight.w700,
+                 color: const Color(0xff27247D),
+               ),
+             ),
+           ),
+           Container(
+             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+             decoration: BoxDecoration(
+               color: const Color(0xffD5F2DF),
+               borderRadius: BorderRadius.circular(20),
+             ),
+             child: Text(
+               widget.exercise.level,
+               style: GoogleFonts.poppins(
+                 color: const Color(0xff006B4E),
+                 fontWeight: FontWeight.w600,
+               ),
+             ),
+           ),
+         ],
+       );
+     }
+
+
+     Widget buildStateRow(){
+
+     return Row(
+       children: [
+         Expanded(child: buildStatCard(
+             icon: Icons.access_time_outlined,
+             iconColor: Colors.deepPurple,
+             label: "Duration",
+             value: widget.exercise.duration
+         )),
+         const SizedBox(width: 14),
+         Expanded(child: buildStatCard(
+           icon: Icons.local_fire_department_outlined,
+           iconColor: Colors.pink,
+           label: "Calories",
+           value: widget.exercise.calories,
+         )),
+
+       ],
+     );
+
+
+
+
+
+
+
+     }
+   Widget buildStatCard({
+     required IconData icon,
+     required Color iconColor,
+     required String label,
+     required String value,
+    }){
+     return Container(
+       padding: const EdgeInsets.all(14),
+       decoration: BoxDecoration(
+         color: Colors.white,
+         borderRadius: BorderRadius.circular(16),
+         border: Border.all(color: const Color(0xffE9DDF9)),
+       ),
+       child: Column(
+         crossAxisAlignment: CrossAxisAlignment.start,
+         children: [
+           Row(
+             children: [
+               Icon(icon, size: 16, color: iconColor),
+               const SizedBox(width: 6),
+               Text(
+                 label,
+                 style: GoogleFonts.poppins(color: Colors.grey.shade600, fontSize: 13),
+               ),
+             ],
+           ),
+           const SizedBox(height: 4),
+           Text(
+             value,
+             style: GoogleFonts.poppins(
+               fontWeight: FontWeight.w700,
+               fontSize: 16,
+               color: const Color(0xff27247D),
+             ),
+           ),
+         ],
+       ),
+     );
+   }
+   Widget buildAboutSection() {
+     return Container(
+         width: double.infinity,
+         padding: const EdgeInsets.all(16),
+         decoration: BoxDecoration(
+           color: Colors.white,
+           borderRadius: BorderRadius.circular(18),
+           border: Border.all(color: const Color(0xffE9DDF9)),
+         ),
+         child: Column(
+           crossAxisAlignment: CrossAxisAlignment.start,
+           children: [
+             Text(
+               "ABOUT THIS EXERCISE",
+               style: GoogleFonts.poppins(
+                 fontSize: 12,
+                 fontWeight: FontWeight.w700,
+                 color: Colors.deepPurple,
+                 letterSpacing: .5,
+               ),
+             ),
+             const SizedBox(height: 8),
+             Text(
+               widget.exercise.about,
+               style: GoogleFonts.poppins(
+                 fontSize: 15,
+                 color: const Color(0xff27247D),
+                 height: 1.5,
+               ),
+             ),
+           ],
+         )
+         );
+
+
+   }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
