@@ -151,7 +151,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           const SizedBox(height: 30),
 
           Text(
-            "Let’s personalize\nyour wellness 🌸",
+            "Let’s personalize\nyour wellness ",
             style: GoogleFonts.poppins(
               fontSize: 30,
               fontWeight: FontWeight.w700,
@@ -273,7 +273,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           const SizedBox(height: 50),
 
           Text(
-            "Your lifestyle 🌿",
+            "Your lifestyle ",
             style: GoogleFonts.poppins(
               fontSize: 30,
               fontWeight: FontWeight.w700,
@@ -407,7 +407,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               "Your self-care day is a dedicated day each week "
                               "where we’ll encourage you to focus on wellness, "
                               "rest, emotional health, skincare, exercise, and "
-                              "healthy routines 💜",
+                              "healthy routines ",
                               style: GoogleFonts.poppins(
                                 fontSize: 13,
                                 height: 1.7,
@@ -482,7 +482,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           const SizedBox(height: 20),
 
           Text(
-            "Your Wellness Snapshot ✨",
+            "Your Wellness Snapshot ",
             textAlign: TextAlign.center,
             style: GoogleFonts.poppins(
               fontSize: 28,
